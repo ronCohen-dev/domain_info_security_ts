@@ -1,0 +1,24 @@
+ARG WORK_DIR
+ARG NODE_VERSION
+
+FROM node:$NODE_VERSION
+
+WORKDIR $WORK_DIR
+
+#RUN apk update && \
+#    apk add --no-cache nano bash htop && \
+#    npm install -g nodemon
+
+COPY ./package*.json ./
+RUN npm install
+COPY ./ ./
+
+RUN npm install -g rimraf
+
+RUN rimraf dist
+
+# Build TypeScript code
+RUN npx tsc
+
+#CMD ["npm", "start"]
+CMD ["node", "dist/app.js"]

@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  server:
+    hostname: server
+    container_name: server
+    restart: always
+    depends_on:
+      - sql
+    build:
+      context: ./
+      dockerfile: Dockerfile.node
+      args:
+        - NODE_VERSION=${NODE_VERSION:-20.5.1-alpine3.18}
+        - WORK_DIR=${WORK_DIR:-/var/www}
+    environment:
+      - NODE_ENV=${NODE_ENV:-dev}
+      - SQL_PORT=${INTERNAL_MYSQL_PORT:-3306}
+      - WHO_IS_API_KEY=${WHO_IS_API_KEY:-at_vxYe0Hc1GSx8ZuPt1Cd5CCYz6rtxR}
+      - VIRUS_TOTAL_API_KEY=${VIRUS_TOTAL_API_KEY:-e313b6edef963ad6d0e1b4f418a4bd97ceebb62d383ab4f6cbbf4017ad0522be}
+      - EXPRESS_PORT=${CONTAINER_EXPRESS_PORT:-3000}
+      - SQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-pass}
+      - SQL_DATABASE=${MYSQL_DATABASE:-main}
+      - SQL_TYPE=${SQL_TYPE:-mysql}
+    ports:
+      - ${HOST_EXPRESS_PORT:-3000}:${CONTAINER_EXPRESS_PORT:-3000}
+    volumes:
+      - /var/www/node_modules
+      - ./:/var/www
+
+  sql:
+    hostname: sql
+    container_name: sql
+    image: mysql:${MYSQL_VERSION:-8.1.0-oracle}
+    restart: always
+    ports:
+      - ${EXTERNAL_MYSQL_PORT:-3306}:${INTERNAL_MYSQL_PORT:-3306}
+    volumes:
+      - ./sql/var/lib/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-pass}
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-main}
