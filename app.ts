@@ -11,13 +11,7 @@ const app: Express = express();
 
 const port : string = (process.env.EXPRESS_PORT || "3000");
 
-app.get("/", (req : Request , res : Response , next : NextFunction)=> {
-    res.send('Hello from express + ts !!!!!!!!')
-})
 
-app.get("/hi", (req , res , next)=> {
-    res.send('Hi')
-})
 
 app.use("/forensic", forensicRouter)
 
