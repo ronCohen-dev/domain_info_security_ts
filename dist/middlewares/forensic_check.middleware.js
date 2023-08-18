@@ -10,9 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkWithVirusTotalMiddleware = void 0;
-// const {NextFunction, Request, Response} = require('express');
-// const express = require('express');
-// const {NextFunction, Request, Response} = express;
 const virus_model_1 = require("../models/virus.model");
 const whois_model_1 = require("../models/whois.model");
 const checkWithVirusTotalMiddleware = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {

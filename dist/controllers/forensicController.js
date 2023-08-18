@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -31,6 +31,7 @@ const checkWithBothController = function (req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         const domain = req.query.domain;
         const [whoisInfo, virusTotalInfo] = yield (0, forensic_service_1.getAndSaveDataForVirusTotalAndWhoIsService)(domain);
+        console.log("RONNNNNNNNNNNN");
         return res.status(200).json({ whoisInfo, virusTotalInfo });
     });
 };

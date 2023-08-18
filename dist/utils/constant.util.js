@@ -1,13 +1,3 @@
-// 'use strict';
-//
-//
-// export const WHO_IS_API_KEY : string = process.env.WHO_IS_API_KEY!
-// export const VIRUS_TOTAL_API_KEY : string = process.env.VIRUS_TOTAL_API_KEY!
-// export const SQL_PORT : string = process.env.SQL_PORT!
-// export const EXPRESS_PORT : string = process.env.EXPRESS_PORT!
-// export const SQL_ROOT_PASSWORD : string = process.env.SQL_ROOT_PASSWORD!
-// export const SQL_DATABASE : string = process.env.SQL_DATABASE!
-// export const SQL_TYPE : string = process.env.SQL_TYPE!
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SQL_TYPE = exports.SQL_DATABASE = exports.SQL_ROOT_PASSWORD = exports.EXPRESS_PORT = exports.SQL_PORT = exports.VIRUS_TOTAL_API_KEY = exports.WHO_IS_API_KEY = void 0;

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -34,8 +34,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAndSaveDataForVirusTotalAndWhoIsService = exports.getAndSaveDataForVirusTotalService = exports.getAndSaveDataForWhoIsService = void 0;
 const https = __importStar(require("https"));
-// import {VirusModel} from "../models/VirusAttributes";
-// import {WhoisModel} from "../models/WhoisAttributes";
 const virus_model_1 = require("../models/virus.model");
 const whois_model_1 = require("../models/whois.model");
 const constant_util_1 = require("../utils/constant.util");
@@ -108,8 +106,3 @@ const getAndSaveDataForVirusTotalAndWhoIsService = function (domain) {
     });
 };
 exports.getAndSaveDataForVirusTotalAndWhoIsService = getAndSaveDataForVirusTotalAndWhoIsService;
-// export {
-//     getAndSaveDataForVirusTotalService,
-//     getAndSaveDataForWhoIsService,
-//     getAndSaveDataForVirusTotalAndWhoIsService
-// };

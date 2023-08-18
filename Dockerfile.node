@@ -9,16 +9,10 @@ WORKDIR $WORK_DIR
 #    apk add --no-cache nano bash htop && \
 #    npm install -g nodemon
 
+RUN npm install -g rimraf
 COPY ./package*.json ./
 RUN npm install
 COPY ./ ./
-
-RUN npm install -g rimraf
-
 RUN rimraf dist
-
-# Build TypeScript code
 RUN npx tsc
-
-#CMD ["npm", "start"]
 CMD ["node", "dist/app.js"]

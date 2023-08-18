@@ -1,28 +1,9 @@
-"use strict";
+'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VirusModel = void 0;
 const sequelize_1 = require("sequelize");
-// import {SequelizeDb} from "../configs/sql.config";
 const sql_config_1 = require("../configs/sql.config");
 class VirusModel extends sequelize_1.Model {
-    constructor() {
-        super(...arguments);
-        this.jarm = null;
-        this.whois = null;
-        this.lastHttpsCertificateDate = null;
-        this.lastDnsRecords = null;
-        this.lastDnsRecordsDate = null;
-        this.lastAnalysisDate = null;
-        this.lastAnalysisStats = null;
-        this.lastAnalysisResults = null;
-        this.popularityRanks = null;
-        this.reputation = null;
-        this.lastHttpsCertificate = null;
-        this.tld = null;
-        this.lastModificationDate = null;
-        this.categories = null;
-        this.totalVotes = null;
-    }
     static initModel(sequelize) {
         VirusModel.init({
             id: {

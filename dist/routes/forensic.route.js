@@ -10,5 +10,4 @@ const router = express_1.default.Router();
 router.get('/virus-total', forensic_check_middleware_1.checkWithVirusTotalMiddleware, forensicController_1.getVirusTotalInfoController);
 router.get('/whoami', forensic_check_middleware_1.checkWithVirusTotalMiddleware, forensicController_1.getWhoIsInfoController);
 router.get('/check-all', forensic_check_middleware_1.checkWithVirusTotalMiddleware, forensicController_1.checkWithBothController);
-// module.exports = router;
 exports.default = router;

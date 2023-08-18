@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parseWhoIsInfo = exports.parseVirusesTotal = void 0;
 const parseVirusesTotal = function (virusTotalInfo) {

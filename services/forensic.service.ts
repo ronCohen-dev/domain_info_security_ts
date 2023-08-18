@@ -71,8 +71,3 @@ export const getAndSaveDataForVirusTotalAndWhoIsService = async function (domain
     return [await whoisPromise, await virusTotalPromise];
 }
 
-// export {
-//     getAndSaveDataForVirusTotalService,
-//     getAndSaveDataForWhoIsService,
-//     getAndSaveDataForVirusTotalAndWhoIsService
-// };
